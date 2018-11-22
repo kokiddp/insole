@@ -1,0 +1,16 @@
+{
+  "name": "insole-public",
+  "version": "1.0.0",
+  "description": "EB HiTech Insole",
+  "main": "insole-public.js",
+  "author": "Gabriele Coquillard",
+  "license": "GPL-2.0-or-later",
+  "dependencies": {
+    "angular": "^1.7.5"
+  },
+  "scripts": {
+    "watch": "watchify src.js -o insole-public.js -v",
+    "annotate": "ng-annotate -a src.js -o src.js ",
+    "build": "uglifyjs -m -c -o insole-public.min.js insole-public.js"
+  }
+}
