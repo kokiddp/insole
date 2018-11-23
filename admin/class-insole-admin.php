@@ -47,10 +47,13 @@ class Insole_Admin {
 	 * @param      string    $plugin_name       The name of this plugin.
 	 * @param      string    $version    The version of this plugin.
 	 */
-	public function __construct( $plugin_name, $version ) {
+	public function __construct( $plugin_name, $version, $environment ) {
 
 		$this->plugin_name = $plugin_name;
 		$this->version = $version;
+		$this->environment = $environment;
+
+		$this::add_dependencies();
 
 	}
 
@@ -97,6 +100,15 @@ class Insole_Admin {
 		 */
 
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/insole-admin.js', array( 'jquery' ), $this->version, false );
+
+	}
+
+	/**
+	 * Load the dependencies for the public-facing side of the site.
+	 *
+	 * @since    1.0.0
+	 */
+	public function add_dependencies() {
 
 	}
 

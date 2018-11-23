@@ -171,7 +171,7 @@ class Insole {
 	 */
 	private function define_admin_hooks() {
 
-		$plugin_admin = new Insole_Admin( $this->get_plugin_name(), $this->get_version() );
+		$plugin_admin = new Insole_Admin( $this->get_plugin_name(), $this->get_version(), $this->get_environment() );
 
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
